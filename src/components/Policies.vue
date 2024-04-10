@@ -5,7 +5,7 @@
         <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Policies</h2>
         <!-- <p class="mt-2 text-lg leading-8 text-gray-600">Learn how to grow your business with our expert advice.</p> -->
         <div class="mt-16 space-y-20 lg:mt-20 lg:space-y-20">
-          <article v-for="policy in policies" :key="policy.id" class="relative isolate flex flex-col gap-8 lg:flex-row">
+          <article v-for="policy in policiesArray" :key="policy.id" class="relative isolate flex flex-col gap-8 lg:flex-row">
             <div class="relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-square lg:w-40 lg:shrink-0 items-center justify-center rounded-lg bg-indigo-600">
               <component :is="policy.icon" class="h-40 w-full text-white items-center justify-center" aria-hidden="true" />
               <!-- <img :src="post.imageUrl" alt="" class="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 object-cover" /> -->
@@ -52,75 +52,11 @@
 import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, GlobeAmericasIcon, CurrencyDollarIcon } from '@heroicons/vue/24/outline'
 import { ref } from 'vue'
 
-/*
-defineProps({
-  policies: {
+const props = defineProps({
+    policiesArray: {
     type: Array,
-      default: [
-        {
-          id: 1,
-          title: 'Payments',
-          href: '#',
-          description:
-            'To reserve your date with us we will have you sign our contract agreement and give us 50% deposit. At the rehearsal we will collect the remaining 50%. \n\nWe accept the following forms of payment:\n- Cash\n- Apple Pay\n- Pay Pal\n- Money Order\n- Cashier’s Check\n',
-          icon:
-            CurrencyDollarIcon,
-        },
-        {
-          id: 2,
-          title: 'Travel beyond Albuquerque, Rio Rancho and Santa Fe',
-          href: '#',
-          description:
-            'We would love to work with you outside our home area. Depending on time of travel, distance and accommodations needed additional cost will be required. We will discuss this on a case-by-case basis and ensure a tailored experience and fair price for every couple.',
-          icon:
-            GlobeAmericasIcon,
-        },
-        {
-          id: 3,
-          title: 'Refunds',
-          href: '#',
-          description:
-            'If the event is cancelled prior to Duke City Ministries starting planning, any meetings, or the start of creation of your ceremony a full refund will be provided. If the event is cancelled after the planning process has begun, the deposit will not be refunded. Once rehearsal is complete, and full payment is made, refunds will not be provided.',
-          icon:
-            CurrencyDollarIcon,
-        },
-      ],
-  },
+    required: true,
+    default: () => []
+  }
 })
-*/
-
-const policies = [
-  {
-    id: 1,
-    title: 'Payments',
-    href: '#',
-    description:
-      'To reserve your date with us we will have you sign our contract agreement and give us 50% deposit. At the rehearsal we will collect the remaining 50%. \n\nWe accept the following forms of payment:\n- Cash\n- Apple Pay\n- Pay Pal\n- Money Order\n- Cashier’s Check\n',
-    icon:
-      CurrencyDollarIcon,
-
-  },
-  {
-    id: 2,
-    title: 'Travel beyond Albuquerque, Rio Rancho and Santa Fe',
-    href: '#',
-    description:
-      'We would love to work with you outside our home area. Depending on time of travel, distance and accommodations needed additional cost will be required. We will discuss this on a case-by-case basis and ensure a tailored experience and fair price for every couple.',
-    icon:
-    GlobeAmericasIcon,
-
-  },
-  {
-    id: 3,
-    title: 'Refunds',
-    href: '#',
-    description:
-      'If the event is cancelled prior to Duke City Ministries starting planning, any meetings, or the start of creation of your ceremony a full refund will be provided. If the event is cancelled after the planning process has begun, the deposit will not be refunded. Once rehearsal is complete, and full payment is made, refunds will not be provided.',
-    icon:
-      CurrencyDollarIcon,
-
-  },
-  // More posts...
-]
-
 </script>

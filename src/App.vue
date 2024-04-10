@@ -6,16 +6,21 @@ import Policies from './components/Policies.vue'
 import Reviews from './components/Reviews.vue'
 import Title from './components/Title.vue'
 import tiers from '../src/assets/data/tiers'
+import policies from '../src/assets/data/policies'
+import {testimonials, featured} from '../src/assets/data/reviews'
 
-console.log(tiers)
+
+console.log(featured)
+console.log(testimonials)
+
+
+
 </script>
 
 <template>
   <Title />
   <Packages :tiersArray=tiers.tiers />
-  <Policies />
+  <Policies :policiesArray=policies.policies />
   <About />
-  <Reviews />
+  <Reviews :testimonialsArray=testimonials :featuredTestimonial=featured />
 </template>
-
-
